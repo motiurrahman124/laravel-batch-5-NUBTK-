@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,7 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
+Route::get('/signup', [AuthController::class, "viewSignupForm"]);
+Route::post('/signup', [AuthController::class, "signup"]);
+
+Route::get('/login', [AuthController::class, "viewLoginForm"]);
