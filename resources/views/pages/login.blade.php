@@ -64,7 +64,8 @@
                         <span class="h-px flex-1 bg-[#d2d2d2]"></span>
                     </div>
 
-                    <form class="space-y-4">
+                    <form action="/login" method="post" class="space-y-4">
+                        @csrf
                         <div>
                             <label for="email" class="mb-2 block text-sm font-semibold text-[#555]">Email address</label>
                             <input
@@ -96,7 +97,7 @@
                         </div>
 
                         <button
-                            type="button"
+                            type="submit"
                             class="w-full bg-[#ff4d35] px-5 py-3.5 text-base font-bold tracking-widest text-white transition hover:bg-[#ed402b] focus:outline-none focus:ring-4 focus:ring-[#ff6040]/30 active:scale-[0.99]"
                         >
                             LOG IN

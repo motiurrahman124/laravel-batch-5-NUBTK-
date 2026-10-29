@@ -91,8 +91,13 @@
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+                @if(Auth::user())
+                <a href="/logout" class="nav-item nav-link text-danger">Logout</a>
+                @else
+                <a href="/login" class="nav-item nav-link text-success">Login</a>
+                @endif
             </div>
-            <a href="https://htmlcodex.com/downloading/?item=2478" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Buy Pro Version<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -24,5 +25,22 @@ class AuthController extends Controller
         $data["password"] = $request->password;
 
         User::create( $data);
+
+        return redirect()->route("viewLoginForm");
+    }
+
+    public function login(Request $data ){
+
+        if(Auth::attempt(["email"=>$data->email, "password"=>$data->password])){
+            return redirect()->route("home");
+        }else{
+            dd("Invalid Credentials!!");
+        }
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->route("viewLoginForm");
     }
 }
