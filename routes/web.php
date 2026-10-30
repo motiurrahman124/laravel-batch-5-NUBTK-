@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,3 +25,4 @@ Route::post('/login', [AuthController::class, "login"]);
 Route::get('/logout', [AuthController::class, "logout"]);
 
 Route::get('/admin-panel', [AdminController::class, "viewDashboard"])->name("admin-panel");
+Route::get('/admin/add-course', [CourseController::class, "viewCourseForm"])->name("viewCourseForm");
