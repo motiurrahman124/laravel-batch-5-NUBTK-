@@ -32,7 +32,11 @@ class AuthController extends Controller
     public function login(Request $data ){
 
         if(Auth::attempt(["email"=>$data->email, "password"=>$data->password])){
-            return redirect()->route("home");
+            if(Auth::user()->isAdmin == 1){
+                return redirect()->route("admin-panel");
+            }else{
+                return redirect()->route("home");
+            }
         }else{
             dd("Invalid Credentials!!");
         }
