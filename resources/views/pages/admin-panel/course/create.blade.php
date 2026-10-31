@@ -17,7 +17,7 @@
         </a>
     </div>
 
-    <form class="overflow-hidden rounded-[10px] border border-[#edf0f3] bg-white shadow-[0_3px_14px_rgba(29,54,92,.025)]" action="#" method="post">
+    <form class="overflow-hidden rounded-[10px] border border-[#edf0f3] bg-white shadow-[0_3px_14px_rgba(29,54,92,.025)]" action="/admin/add-course" method="post">
         @csrf
 
         <div class="border-b border-[#edf0f4] px-5 py-5 sm:px-7">
