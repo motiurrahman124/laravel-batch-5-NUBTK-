@@ -28,3 +28,5 @@ Route::get('/admin/add-course', [CourseController::class, "viewCourseForm"])->na
 Route::post('/admin/add-course', [CourseController::class, "createCourse"])->name("addCourse");
 Route::get('/admin/course-list', [CourseController::class, "viewCourseList"])->name("viewCourseList");
 Route::get('/admin/course-delete/{id}', [CourseController::class, "deleteCourse"])->name("deleteCourse");
+Route::get('/admin/edit-course/{id}', [CourseController::class, "viewCourseEditForm"])->name("viewCourseEditForm");
+Route::post('/admin/edit-course', [CourseController::class, "editCourse"])->name("editCourse");

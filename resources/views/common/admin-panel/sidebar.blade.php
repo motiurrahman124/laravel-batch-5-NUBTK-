@@ -14,7 +14,7 @@
                 <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="#">
                     <i class="fa-solid fa-users w-[18px] text-center"></i><span>User List</span>
                 </a>
-                <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="#">
+                <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="/admin/course-list">
                     <i class="fa-solid fa-table-cells w-[18px] text-center"></i><span>Courses</span>
                 </a>
                 <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="/admin/add-course">

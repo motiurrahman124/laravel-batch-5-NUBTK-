@@ -17,6 +17,7 @@
         <table class="w-full min-w-[900px] border-collapse text-left">
             <thead>
                 <tr class="border-b border-[#edf0f4] bg-[#fafbfc] text-[13px] font-medium text-[#929ba8]">
+                    <th class="px-5 py-4">Image</th>
                     <th class="px-5 py-4">Title</th>
                     <th class="px-5 py-4">Price</th>
                     <th class="px-5 py-4">Duration</th>
@@ -30,6 +31,9 @@
 
                 @foreach($data as $course)
                 <tr>
+                    <td class="px-5 py-4">
+                        <img src="/images/courses/{{$course->image}}" alt="" width="64px" height="50px">
+                    </td>
                     <td class="px-5 py-4 font-medium text-[#303e50]">{{$course->title}}</td>
                     <td class="px-5 py-4">${{$course->price}}</td>
                     <td class="px-5 py-4">{{$course->duration}}</td>
@@ -43,7 +47,7 @@
                     </td>
                     <td class="max-w-[300px] px-5 py-4">{{$course->short_description}}</td>
                     <td class="space-x-2">
-                        <a href="#" class="bg-blue-500 text-white px-3 py-1 rounded-md cursor-pointer">Edit</a>
+                        <a href="{{route("viewCourseEditForm", $course->id)}}" class="bg-blue-500 text-white px-3 py-1 rounded-md cursor-pointer">Edit</a>
                         <a href="{{route("deleteCourse", $course->id)}}" class="bg-red-500 text-white px-3 py-1 rounded-md cursor-pointer">Delete</a>
                     </td>
                 </tr>
