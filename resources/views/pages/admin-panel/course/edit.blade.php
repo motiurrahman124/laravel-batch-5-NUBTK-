@@ -103,8 +103,7 @@
                     rows="4"
                     maxlength="255"
                     placeholder="Write a brief overview of the course..."
-                    class="w-full resize-none rounded-md border border-[#dde3ea] bg-white px-3.5 py-3 text-sm leading-6 text-[#303e50] outline-none transition placeholder:text-[#adb5c0] focus:border-[#3479df] focus:ring-3 focus:ring-[#3479df]/10">
-                {{$course->short_description}}
+                    class="w-full resize-none rounded-md border border-[#dde3ea] bg-white px-3.5 py-3 text-sm leading-6 text-[#303e50] outline-none transition placeholder:text-[#adb5c0] focus:border-[#3479df] focus:ring-3 focus:ring-[#3479df]/10">{{$course->short_description}}
                 </textarea>
                 <p class="mt-1 text-right text-[11px] text-[#929ba8]">Maximum 255 characters</p>
             </div>

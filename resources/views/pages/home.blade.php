@@ -237,40 +237,55 @@
             <div class=" my-6 mb-0 ">
                 <div class="bg-primary text-center p-5">
                     <h1 class="mb-4">Make Appointment</h1>
-                    <form>
+                    <form action="{{ Auth::user() ? "/make-appointment" : "/login"}}" method="post">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                    <input type="text" name="name" class="form-control border-0" id="gname" placeholder="Gurdian Name">
                                     <label for="gname">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
+                                    <input type="email" name="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
                                     <label for="gmail">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                    <label for="cname">Courses Type</label>
+                                    <select name="course" id="" class="form-control border-0">
+                                        @foreach($data as $course)
+                                        <option value="{{$course->id}}">{{$course->title}}</option>
+                                        @endforeach
+                                    </select>
+                                    <!-- <input type="text"  class="form-control border-0" id="cname" placeholder="Child Name"> -->
+                                    <label for="cname">Select Course</label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                    <label for="cage">Car Type</label>
+                                    <select name="car_type" id="car_type" class="form-control border-0">
+                                        <option value="" selected disabled>Select Car Type</option>
+                                        <option value="sedan">Sedan</option>
+                                        <option value="suv">SUV</option>
+                                        <option value="hatchback">Hatchback</option>
+                                        <option value="coupe">Coupe</option>
+                                        <option value="convertible">Convertible</option>
+                                        <option value="pickup">Pickup Truck</option>
+                                        <option value="van">Van</option>
+                                    </select>
+                                    <label for="car_type">Car Type</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <textarea name="message" class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-dark w-100 py-3" type="submit">Submit</button>
+                                <button class="btn btn-dark w-100 py-3" type="submit">{{Auth::user() ? "Submit" : "Please Login"}}</button>
                             </div>
                         </div>
                     </form>

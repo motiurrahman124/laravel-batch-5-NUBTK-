@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
@@ -30,3 +31,7 @@ Route::get('/admin/course-list', [CourseController::class, "viewCourseList"])->n
 Route::get('/admin/course-delete/{id}', [CourseController::class, "deleteCourse"])->name("deleteCourse");
 Route::get('/admin/edit-course/{id}', [CourseController::class, "viewCourseEditForm"])->name("viewCourseEditForm");
 Route::post('/admin/edit-course', [CourseController::class, "editCourse"])->name("editCourse");
+Route::post('/make-appointment', [AppointmentController::class, "makeAppointment"])->name("makeAppointment");
+Route::get('/admin-panel/bookings', [AppointmentController::class, "allBookings"])->name("allBookings");
+Route::get('/admin-panel/bookings/approve/{id}', [AppointmentController::class, "approveBooking"])->name("approveBooking");
+Route::get('/admin-panel/bookings/reject/{id}', [AppointmentController::class, "rejectBooking"])->name("rejectBooking");

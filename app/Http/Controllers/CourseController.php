@@ -68,6 +68,18 @@ class CourseController extends Controller
         $data["level"] = $request->level;
         $data["status"] = $request->status;
 
+        if($request->file("image")){
+            $file = $request->file("image");
+            $name =time()."_".$file->getClientOriginalName();
+            $folder = public_path("images/courses");
+
+            File::ensureDirectoryExists($folder);
+
+            $file->move($folder, $name);
+
+            $data["image"] = $name;
+        }
+
         Course::where(["id"=> $request->id])->update($data);
 
         return redirect()->route("viewCourseList");
