@@ -8,13 +8,13 @@
             </div>
 
             <nav class="pt-[17px]" aria-label="Admin navigation">
-                <a class="flex h-12 items-center gap-4 bg-[#3479df] px-[44px] text-sm font-medium text-white" href="{{ url('/admin-panel') }}">
+                <a class="flex h-12 items-center gap-4 {{request()->routeIs("admin-panel") ? "bg-[#3479df]" : ""}} px-[44px] text-sm font-medium text-white" href="{{ url('/admin-panel') }}">
                     <i class="fa-solid fa-border-all w-[18px] text-center"></i><span>Dashboard</span>
                 </a>
                 <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="#">
                     <i class="fa-solid fa-users w-[18px] text-center"></i><span>User List</span>
                 </a>
-                <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="/admin/course-list">
+                <a class="flex h-12 items-center gap-4 px-[44px] {{request()->routeIs("viewCourseList") ? "bg-[#3479df]" : ""}} text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="/admin/course-list">
                     <i class="fa-solid fa-table-cells w-[18px] text-center"></i><span>Courses</span>
                 </a>
                 <a class="flex h-12 items-center gap-4 px-[44px] text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white" href="/admin/add-course">

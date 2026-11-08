@@ -8,7 +8,8 @@
     @vite('resources/css/app.css')
 </head>
 <body class="min-h-screen bg-[#e9eaef] px-4 py-8 font-sans text-[#252832] antialiased sm:px-8">
-    <main class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl items-center justify-center">
+   
+<main class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl items-center justify-center">
         <div class="grid w-full overflow-hidden rounded-[1.75rem] bg-[#fafafa] shadow-xl shadow-slate-900/10 lg:min-h-[650px] lg:grid-cols-2">
             <aside class="flex items-center justify-center bg-gradient-to-br from-[#ff9f16] via-[#ff7130] to-[#ff4c3c] px-8 py-12 text-center text-white sm:px-14 lg:px-12">
                 <div class="max-w-md">
@@ -105,7 +106,9 @@
                     </form>
                 </div>
             </section>
+            
         </div>
     </main>
+    @sweetAlert
 </body>
 </html>
